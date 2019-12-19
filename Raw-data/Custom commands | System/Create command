@@ -1,0 +1,519 @@
+{
+  "name": "command",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "lUrlx",
+  "actions": [
+    {
+      "member": "1",
+      "varName": "",
+      "permission": "MANAGE_ROLES",
+      "iftrue": "3",
+      "iftrueVal": "2",
+      "iffalse": "0",
+      "iffalseVal": "1",
+      "name": "Check Member Permissions"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "You don't have permissions: **Manage Roles**",
+      "storage": "0",
+      "varName2": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    },
+    {
+      "condition": "0",
+      "comparison": "2",
+      "value": "0",
+      "iftrue": "3",
+      "iftrueVal": "2",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Parameters"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": ":x: Your argument should be a command name.",
+      "storage": "0",
+      "varName2": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "condition": "0",
+      "comparison": "2",
+      "value": "1",
+      "iftrue": "3",
+      "iftrueVal": "2",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Parameters"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": ":x: Your argument should be a new command name and message to send:\n`${server.tag}command hello Hello! How are you?`",
+      "storage": "0",
+      "varName2": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "storage": "1",
+      "varName": "Params",
+      "comparison": "1",
+      "value": "0",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "3",
+      "iffalseVal": "2",
+      "name": "Check Variable"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": ":x: The command name can not be `0`.",
+      "storage": "0",
+      "varName2": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "info": "0",
+      "infoIndex": "1",
+      "storage": "1",
+      "varName": "Params",
+      "name": "Store Command Params"
+    },
+    {
+      "info": "1",
+      "infoIndex": "2",
+      "storage": "1",
+      "varName": "Params2",
+      "name": "Store Command Params"
+    },
+    {
+      "behavior": "1",
+      "interpretation": "0",
+      "code": "const str = tempVars(\"Params\")\nconst length = str.length\nconst str1 = tempVars(\"Params2\")\nconst length1 = str1.length\nif ( length > 20 ) {\nmsg.channel.send(`The command name can not be longer than 20 characters.`)\n} else if ( length1 > 2000 ) {\nmsg.channel.send(`The command text can not be longer than 2.000 characters.`)\n} \nelse {\nthis.callNextAction(cache) }",
+      "storage": "0",
+      "varName": "",
+      "name": "Run Script"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "Command1",
+      "comparison": "1",
+      "value": "1",
+      "iftrue": "3",
+      "iftrueVal": "9",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Server Data"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "Command1",
+      "changeType": "0",
+      "value": "parseInt(1)",
+      "name": "Control Server Data"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "CommandName1",
+      "changeType": "0",
+      "value": "tempVars(\"Params\")",
+      "name": "Control Server Data"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "CommandMessage1",
+      "changeType": "0",
+      "value": "tempVars(\"Params2\")",
+      "name": "Control Server Data"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "CommandName1",
+      "defaultVal": "0",
+      "storage": "2",
+      "varName2": "CommandName1",
+      "name": "Store Server Data"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "CommandMessage1",
+      "defaultVal": "0",
+      "storage": "2",
+      "varName2": "CommandMessage1",
+      "name": "Store Server Data"
+    },
+    {
+      "storage": "2",
+      "varName": "CommandMessage1",
+      "name": "Save Variable"
+    },
+    {
+      "storage": "2",
+      "varName": "CommandName1",
+      "name": "Save Variable"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": ":white_check_mark: Command `${server.tag}${tempVars(\"Params\")}` has been created.",
+      "storage": "0",
+      "varName2": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "Command2",
+      "comparison": "1",
+      "value": "1",
+      "iftrue": "3",
+      "iftrueVal": "9",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Server Data"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "Command2",
+      "changeType": "0",
+      "value": "parseInt(1)",
+      "name": "Control Server Data"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "CommandName2",
+      "changeType": "0",
+      "value": "tempVars(\"Params\")",
+      "name": "Control Server Data"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "CommandMessage2",
+      "changeType": "0",
+      "value": "tempVars(\"Params2\")",
+      "name": "Control Server Data"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "CommandName2",
+      "defaultVal": "0",
+      "storage": "2",
+      "varName2": "CommandName2",
+      "name": "Store Server Data"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "CommandMessage2",
+      "defaultVal": "0",
+      "storage": "2",
+      "varName2": "CommandMessage2",
+      "name": "Store Server Data"
+    },
+    {
+      "storage": "2",
+      "varName": "CommandMessage2",
+      "name": "Save Variable"
+    },
+    {
+      "storage": "2",
+      "varName": "CommandName2",
+      "name": "Save Variable"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": ":white_check_mark:  Command `${server.tag}${tempVars(\"Params\")}` has been created.",
+      "storage": "0",
+      "varName2": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "Command3",
+      "comparison": "1",
+      "value": "1",
+      "iftrue": "3",
+      "iftrueVal": "9",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Server Data"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "Command3",
+      "changeType": "0",
+      "value": "parseInt(1)",
+      "name": "Control Server Data"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "CommandName3",
+      "changeType": "0",
+      "value": "tempVars(\"Params\")",
+      "name": "Control Server Data"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "CommandMessage3",
+      "changeType": "0",
+      "value": "tempVars(\"Params2\")",
+      "name": "Control Server Data"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "CommandName3",
+      "defaultVal": "0",
+      "storage": "2",
+      "varName2": "CommandName3",
+      "name": "Store Server Data"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "CommandMessag3",
+      "defaultVal": "0",
+      "storage": "2",
+      "varName2": "CommandMessage3",
+      "name": "Store Server Data"
+    },
+    {
+      "storage": "2",
+      "varName": "CommandMessage3",
+      "name": "Save Variable"
+    },
+    {
+      "storage": "2",
+      "varName": "CommandName3",
+      "name": "Save Variable"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": ":white_check_mark:  Command `${server.tag}${tempVars(\"Params\")}` has been created.",
+      "storage": "0",
+      "varName2": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "Command4",
+      "comparison": "1",
+      "value": "1",
+      "iftrue": "3",
+      "iftrueVal": "9",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Server Data"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "Command4",
+      "changeType": "0",
+      "value": "parseInt(1)",
+      "name": "Control Server Data"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "CommandName4",
+      "changeType": "0",
+      "value": "tempVars(\"Params\")",
+      "name": "Control Server Data"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "CommandMessage4",
+      "changeType": "0",
+      "value": "tempVars(\"Params2\")",
+      "name": "Control Server Data"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "CommandName4",
+      "defaultVal": "0",
+      "storage": "2",
+      "varName2": "CommandName4",
+      "name": "Store Server Data"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "CommandMessag4",
+      "defaultVal": "0",
+      "storage": "2",
+      "varName2": "CommandMessage4",
+      "name": "Store Server Data"
+    },
+    {
+      "storage": "2",
+      "varName": "CommandMessage4",
+      "name": "Save Variable"
+    },
+    {
+      "storage": "2",
+      "varName": "CommandName4",
+      "name": "Save Variable"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": ":white_check_mark:  Command `${server.tag}${tempVars(\"Params\")}` has been created.",
+      "storage": "0",
+      "varName2": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "Command5",
+      "comparison": "1",
+      "value": "1",
+      "iftrue": "3",
+      "iftrueVal": "9",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Server Data"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "Command5",
+      "changeType": "0",
+      "value": "parseInt(1)",
+      "name": "Control Server Data"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "CommandName5",
+      "changeType": "0",
+      "value": "tempVars(\"Params\")",
+      "name": "Control Server Data"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "CommandMessage5",
+      "changeType": "0",
+      "value": "tempVars(\"Params2\")",
+      "name": "Control Server Data"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "CommandMessag5",
+      "defaultVal": "0",
+      "storage": "2",
+      "varName2": "CommandMessage5",
+      "name": "Store Server Data"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "CommandName5",
+      "defaultVal": "0",
+      "storage": "2",
+      "varName2": "CommandName5",
+      "name": "Store Server Data"
+    },
+    {
+      "storage": "2",
+      "varName": "CommandName5",
+      "name": "Save Variable"
+    },
+    {
+      "storage": "2",
+      "varName": "CommandMessage5",
+      "name": "Save Variable"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": ":white_check_mark:  Command `${server.tag}${tempVars(\"Params\")}` has been created.",
+      "storage": "0",
+      "varName2": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": ":x: This server has reached the maximal amount of custom commands. Please delete commands before creating a new one.",
+      "storage": "0",
+      "varName2": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    }
+  ],
+  "_aliases": [
+    "createcommand",
+    "cc"
+  ]
+}
