@@ -1,0 +1,441 @@
+{
+  "name": "deletecommand",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "MTEnK",
+  "actions": [
+    {
+      "member": "1",
+      "varName": "",
+      "permission": "MANAGE_GUILD",
+      "iftrue": "3",
+      "iftrueVal": "1",
+      "iffalse": "0",
+      "iffalseVal": "1",
+      "name": "Check Member Permissions"
+    },
+    {
+      "behavior": "1",
+      "interpretation": "0",
+      "code": "You don't have permissions: **Manage Roles**",
+      "storage": "0",
+      "varName": "",
+      "name": "Run Script"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "condition": "0",
+      "comparison": "2",
+      "value": "0",
+      "iftrue": "3",
+      "iftrueVal": "2",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Parameters"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": ":x: Your argument should be a command name.",
+      "storage": "0",
+      "varName2": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "info": "0",
+      "infoIndex": "1",
+      "storage": "1",
+      "varName": "Params",
+      "name": "Store Command Params"
+    },
+    {
+      "storage": "1",
+      "varName": "Params",
+      "comparison": "1",
+      "value": "0",
+      "iftrue": "2",
+      "iftrueVal": "55",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "Params",
+      "conversion": "4",
+      "storage2": "1",
+      "varName2": "Params",
+      "name": "Convert Variable"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "CommandName1",
+      "defaultVal": "190380",
+      "storage": "1",
+      "varName2": "CommandName1",
+      "name": "Store Server Data"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "CommandMessage1",
+      "defaultVal": "0",
+      "storage": "1",
+      "varName2": "CommandMessage1",
+      "name": "Store Server Data"
+    },
+    {
+      "storage": "1",
+      "varName": "CommandName1",
+      "conversion": "4",
+      "storage2": "1",
+      "varName2": "CommandName1",
+      "name": "Convert Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "Params",
+      "comparison": "1",
+      "value": "tempVars(\"CommandName1\")",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "3",
+      "iffalseVal": "5",
+      "name": "Check Variable"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "Command1",
+      "changeType": "0",
+      "value": "parseInt(0)",
+      "name": "Control Server Data"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "CommandName1",
+      "name": "Delete Server Data MOD"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "CommandMessage1",
+      "name": "Delete Server Data MOD"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": ":white_check_mark: Command `${server.tag}${tempVars(\"Params\")}` has been deleted.",
+      "storage": "0",
+      "varName2": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "CommandName2",
+      "defaultVal": "190380",
+      "storage": "1",
+      "varName2": "CommandName2",
+      "name": "Store Server Data"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "CommandMessage2",
+      "defaultVal": "0",
+      "storage": "1",
+      "varName2": "CommandMessage2",
+      "name": "Store Server Data"
+    },
+    {
+      "storage": "1",
+      "varName": "CommandName2",
+      "conversion": "4",
+      "storage2": "1",
+      "varName2": "CommandName2",
+      "name": "Convert Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "Params",
+      "comparison": "1",
+      "value": "tempVars(\"CommandName2\")",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "3",
+      "iffalseVal": "5",
+      "name": "Check Variable"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "Command2",
+      "changeType": "0",
+      "value": "parseInt(0)",
+      "name": "Control Server Data"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "CommandName2",
+      "name": "Delete Server Data MOD"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "CommandMessage2",
+      "name": "Delete Server Data MOD"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": ":white_check_mark: Command `${server.tag}${tempVars(\"Params\")}` has been deleted.",
+      "storage": "0",
+      "varName2": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "CommandMessage3",
+      "defaultVal": "0",
+      "storage": "1",
+      "varName2": "CommandMessage3",
+      "name": "Store Server Data"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "CommandName3",
+      "defaultVal": "190380",
+      "storage": "1",
+      "varName2": "CommandName3",
+      "name": "Store Server Data"
+    },
+    {
+      "storage": "1",
+      "varName": "CommandName3",
+      "conversion": "4",
+      "storage2": "1",
+      "varName2": "CommandName3",
+      "name": "Convert Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "Params",
+      "comparison": "1",
+      "value": "tempVars(\"CommandName3\")",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "3",
+      "iffalseVal": "5",
+      "name": "Check Variable"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "Command3",
+      "changeType": "0",
+      "value": "parseInt(0)",
+      "name": "Control Server Data"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "CommandName3",
+      "name": "Delete Server Data MOD"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "CommandMessage3",
+      "name": "Delete Server Data MOD"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": ":white_check_mark: Command `${server.tag}${tempVars(\"Params\")}` has been deleted.",
+      "storage": "0",
+      "varName2": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "CommandName4",
+      "defaultVal": "190380",
+      "storage": "1",
+      "varName2": "CommandName4",
+      "name": "Store Server Data"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "CommandMessage4",
+      "defaultVal": "0",
+      "storage": "1",
+      "varName2": "CommandMessage4",
+      "name": "Store Server Data"
+    },
+    {
+      "storage": "1",
+      "varName": "CommandName4",
+      "conversion": "4",
+      "storage2": "1",
+      "varName2": "CommandName4",
+      "name": "Convert Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "Params",
+      "comparison": "1",
+      "value": "tempVars(\"CommandName4\")",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "3",
+      "iffalseVal": "5",
+      "name": "Check Variable"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "Command4",
+      "changeType": "0",
+      "value": "parseInt(0)",
+      "name": "Control Server Data"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "CommandMessage4",
+      "name": "Delete Server Data MOD"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "CommandName4",
+      "name": "Delete Server Data MOD"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": ":white_check_mark: Command `${server.tag}${tempVars(\"Params\")}` has been deleted.",
+      "storage": "0",
+      "varName2": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "CommandName5",
+      "defaultVal": "190380",
+      "storage": "1",
+      "varName2": "CommandName5",
+      "name": "Store Server Data"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "CommandMessag5",
+      "defaultVal": "0",
+      "storage": "1",
+      "varName2": "CommandMessage5",
+      "name": "Store Server Data"
+    },
+    {
+      "storage": "1",
+      "varName": "CommandName5",
+      "conversion": "4",
+      "storage2": "1",
+      "varName2": "CommandName5",
+      "name": "Convert Variable"
+    },
+    {
+      "storage": "1",
+      "varName": "Params",
+      "comparison": "1",
+      "value": "tempVars(\"CommandName5\")",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "3",
+      "iffalseVal": "5",
+      "name": "Check Variable"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "Command5",
+      "changeType": "0",
+      "value": "parseInt(0)",
+      "name": "Control Server Data"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "CommandMessage5",
+      "name": "Delete Server Data MOD"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "CommandName5",
+      "name": "Delete Server Data MOD"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": ":white_check_mark: Command `${server.tag}${tempVars(\"Params\")}` has been deleted.",
+      "storage": "0",
+      "varName2": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": ":x: No command found.",
+      "storage": "0",
+      "varName2": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    }
+  ],
+  "_aliases": [
+    "dc"
+  ]
+}
