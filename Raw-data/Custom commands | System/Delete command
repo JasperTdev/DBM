@@ -9,7 +9,7 @@
       "varName": "",
       "permission": "MANAGE_GUILD",
       "iftrue": "3",
-      "iftrueVal": "1",
+      "iftrueVal": "2",
       "iffalse": "0",
       "iffalseVal": "1",
       "name": "Check Member Permissions"
