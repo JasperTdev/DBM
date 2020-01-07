@@ -5,25 +5,6 @@
   "_id": "BTKuN",
   "actions": [
     {
-      "server": "0",
-      "varName": "",
-      "info": "1",
-      "storage": "1",
-      "varName2": "ID",
-      "name": "Store Server Info"
-    },
-    {
-      "storage": "1",
-      "varName": "ID",
-      "comparison": "1",
-      "value": "'626159042896723968'",
-      "iftrue": "0",
-      "iftrueVal": "",
-      "iffalse": "1",
-      "iffalseVal": "",
-      "name": "Check Variable"
-    },
-    {
       "message": "1",
       "varName": "Message",
       "info": "2",
@@ -48,23 +29,12 @@
       "name": "Run Script"
     },
     {
-      "searchCommandBy": "0",
-      "valueToSearch": "${tempVars(\"Text\")}",
-      "info": "0",
-      "storage": "1",
-      "varName": "Command",
-      "name": "Store Command Info"
-    },
-    {
-      "storage": "1",
-      "varName": "Command",
-      "comparison": "1",
-      "value": "'invalid'",
-      "iftrue": "0",
+      "commandName": "${tempVars(\"Text\")}",
+      "iftrue": "1",
       "iftrueVal": "",
-      "iffalse": "1",
+      "iffalse": "0",
       "iffalseVal": "",
-      "name": "Check Variable"
+      "name": "Check If Command Exists"
     },
     {
       "channel": "5",
